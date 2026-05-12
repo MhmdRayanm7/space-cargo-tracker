@@ -101,6 +101,23 @@ class TestCargoSystem(unittest.TestCase):
 
         self.assertEqual(loaded_items, [])
 
+    # Test filter cargo by planet bonus feature
+    def test_filter_by_planet(self):
+        station = CargoStation()
+
+        item1 = CargoItem(101, "Oxygen Tank", 12.5, "Mars")
+        item2 = CargoItem(102, "Food Box", 8, "Earth")
+        item3 = SpecialCargo(201, "Fuel Cell", 30.5, "Mars", 4, True)
+
+        station.add_item(item1)
+        station.add_item(item2)
+        station.add_item(item3)
+
+        mars_items = station.filter_by_planet("Mars")
+
+        self.assertEqual(len(mars_items), 2)
+        self.assertEqual(mars_items[0].origin_planet, "Mars")
+        self.assertEqual(mars_items[1].origin_planet, "Mars")
 
 if __name__ == "__main__":
     unittest.main()

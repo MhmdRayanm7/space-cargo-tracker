@@ -60,3 +60,16 @@ class CargoStation:
     def get_all_items(self):
         # Return all cargo items
         return self._items
+
+    def filter_by_planet(self, planet):
+        # Return cargo items from the same planet
+        if len(planet) < 2:
+            raise ValueError("Planet name must be at least 2 characters")
+
+        result = []
+
+        for item in self._items:
+            if item.origin_planet == planet:
+                result.append(item)
+
+        return result
