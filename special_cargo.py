@@ -32,5 +32,4 @@ class SpecialCargo(CargoItem):
 
     def __str__(self):
         # Return special cargo item details as text
-        return f"SpecialCargo ID: {self.item_id}, Name: {self.name}, Weight: {self.weight},
-         Origin: {self.origin_planet}, Danger Level: {self.danger_level}, Requires Cooling: {self.requires_cooling}"
+        return f"SpecialCargo ID: {self.item_id}, Name: {self.name}, Weight: {self.weight}, Origin: {self.origin_planet}, Danger Level: {self.danger_level}, Requires Cooling: {self.requires_cooling}"
