@@ -1,4 +1,9 @@
 __pycache__/
 *.pyc
 errors.log
+cargo_data.txt.idea/
+.venv/
+__pycache__/
+*.pyc
+errors.log
 cargo_data.txt
